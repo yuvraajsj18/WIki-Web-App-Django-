@@ -1,0 +1,24 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    Add New Page
+{% endblock %}
+
+{% block main %}
+    <h1 class="text-center">Add a New Page</h1>
+    <div class="container">
+    <form action="{% url 'encyclopedia:new_page'%}" method="POST">
+        {% csrf_token %}
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <label for="id_title" class="input-group-text">Title:</label>
+            </div>
+            <input type="text" name="title" id="id_title" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <textarea name="content" id="id_content" class="form-control" rows="20" placeholder="Enter content in markdown here." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark">Add This Page</button>
+    </form>
+    </div>
+{% endblock %}

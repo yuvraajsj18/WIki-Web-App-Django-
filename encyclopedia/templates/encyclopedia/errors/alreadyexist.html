@@ -1,0 +1,12 @@
+{% extends 'encyclopedia/layout.html' %}
+{% load static %}
+
+{% block title %}
+    Page Already Exist
+{% endblock %}
+
+{% block main %}
+    <h1 class="display-3 text-center">Oops</h1>
+    <h1 class="text-center">{{title}}, Already Exist</h1>
+    <img src="{% static 'encyclopedia/images/oops.jpg' %}" alt="Oops Photo" class="rounded d-block mx-auto mt-4" style="max-width:400px;">
+{% endblock %}

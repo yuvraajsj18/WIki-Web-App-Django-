@@ -1,0 +1,12 @@
+{% extends 'encyclopedia/layout.html' %}
+{% load static %}
+
+{% block title %}
+    Not Found
+{% endblock %}
+
+{% block main %}
+    <h1 class="display-1 text-center">404</h1>
+    <h1 class="text-center">Sorry, Page Not Found</h1>
+    <img src="{% static 'encyclopedia/images/404.png' %}" alt="Not found illustration" class="d-block mx-auto img-fluid">
+{% endblock %}

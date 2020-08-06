@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block main %}
+    <h1 class="text-center">Matched Searched Results for {{query}}</h1>
+
+    {%if results%}
+        <div class="alert alert-success">{{results|length}} result found.</div>
+    {% endif %}
+    <ul class="list-group list-group-flush">
+        {% for result in results %}
+            <a href="{% url 'encyclopedia:entry_page' result %}" class="list-group-item list-group-item-action">{{result}}</a>
+            {% empty %}
+                <div class="alert text-center alert-warning">No Result Found</div>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
